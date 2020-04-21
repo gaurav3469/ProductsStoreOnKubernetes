@@ -29,11 +29,12 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker_Hub_Connection'
         command: 'login'
+        containerRegistry: 'Docker_Hub_Connection'
+        
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker_Hub_Connection'
-        repository: 'azure_devops_aks_project'
         command: 'buildAndPush'
+        repository: 'gaurav3469docker/azure_devops_aks_project'
         Dockerfile: 'MvcApp/Dockerfile'
