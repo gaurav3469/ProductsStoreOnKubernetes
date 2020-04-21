@@ -36,4 +36,4 @@ stages:
         containerRegistry: 'Docker_Hub_Connection'
         repository: 'azure_devops_aks_project'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: 'MvcApp/Dockerfile'
