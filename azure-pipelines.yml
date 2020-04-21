@@ -38,3 +38,11 @@ stages:
         command: 'buildAndPush'
         repository: 'gaurav3469docker/azure_devops_aks_project'
         Dockerfile: 'MvcApp/Dockerfile'
+
+
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            ArtifactName: 'drop'
+            publishLocation: 'Container'
