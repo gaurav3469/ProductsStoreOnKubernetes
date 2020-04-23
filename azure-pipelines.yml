@@ -40,7 +40,11 @@ stages:
         Dockerfile: 'MvcApp/Dockerfile'
 
 
-
+    - task: CopyFiles@2
+      inputs:
+      Contents: '**'
+      TargetFolder: '$(build.artifactstagingdirectory)'
+    
     - task: PublishBuildArtifacts@1
       inputs:
             PathtoPublish: '$(Build.ArtifactStagingDirectory)'
